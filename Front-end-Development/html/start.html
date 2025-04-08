@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        #startButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="myVideo" autoplay muted>
+        <source src="../video/onani.mp4" type="video/mp4">
+        你的浏览器不支持视频标签。
+    </video>
+
+    <div id="startButton">点击启动声音</div>
+
+    <script>
+        window.onload = function() {
+            var video = document.getElementById('myVideo');
+            var startButton = document.getElementById('startButton');
+
+            // 点击按钮时播放视频并取消静音
+            startButton.addEventListener('click', function() {
+                video.muted = false;  // 取消静音
+                video.play();         // 播放视频
+                startButton.style.display = 'none'; // 隐藏按钮
+            });
+
+            // 自动播放静音视频
+            video.play().catch(function(error) {
+                console.log("自动播放失败", error);
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谜语小丑</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('../img/bj2.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .menu {
+            position: absolute;
+            bottom: 5%; /* 按钮距底部的百分比距离 */
+            left: 3%;   /* 按钮距左侧的百分比距离 */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* 将按钮放置在左边 */
+            gap: 3vh;  /* 按钮间隔设为视窗高度的5% */
+        }
+
+        .menu .button {
+            width: 8vw; /* 按钮宽度设为视窗宽度的30% */
+            height: 4vh; /* 按钮高度设为视窗高度的8% */
+            background-color: rgba(0, 0, 0, 0); /* 设置完全透明的背景 */
+            border: 2px solid rgba(0, 0, 0, 0); /* 按钮边框半透明 */
+            cursor: pointer;
+            border-radius: 10px; /* 按钮圆角效果 */
+        }
+
+        .menu .button:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* 悬浮时按钮高亮 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 隐形按钮区域 -->
+    <div class="menu">
+        <div class="button" onclick="startNewStory()"></div>
+        <div class="button" onclick="jsms()"></div>
+        <div class="button" onclick="jsms()"></div>
+        <div class="button" onclick="jsms()"></div>
+        <div class="button" onclick="jsms()"></div>
+		<div class="button" onclick="jsms()"></div>
+        <div class="button" onclick="jsms()"></div>
+    </div>
+
+    <script>
+        // 新的故事按钮点击事件
+        function startNewStory() {
+            // 跳转到 start.html 页面并开始播放视频
+            window.location.href = "start.html"; 
+        }
+		
+		        // 新的故事按钮点击事件
+        function jsms() {
+            // 跳转到 start.html 页面并开始播放视频
+            window.location.href = "js.html"; 
+        }
+    </script>
+	
+	<script src="../js/autoplay-myxc.js"></script>
+</body>
+</html>
